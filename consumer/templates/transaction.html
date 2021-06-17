@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action=''>
+        {% csrf_token %}
+        <p>Enter the requirements of number of people: </p>
+        <input  maxlength="20" name='order'>
+        <p>Enter the phone number: </p>
+        <input maxlength="10" name='phone'>
+        <input type="submit" value="Confirm">
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% csrf_token %}
+    <h1><b>Welcome to our page </b></h1>
+    <h3>{{ msg }}</h3>
+    <h2>Opening soon.....</h2>
+    <br>
+    <br>
+    <form method="post" action="/active/">
+        {% csrf_token %}
+        <input type="submit" value="Active_Inactive">
+    </form>
+    <br>
+    <a href="http://127.0.0.1:8000/history">Order History</a>
+    <br>
+    <a href="http://127.0.0.1:8000/logout">Logout</a>
+    <br>
+    <h1>{{ act }}</h1>
+</body>
+</html>

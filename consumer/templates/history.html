@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+   </style>
+</head>
+<body>
+    {% csrf_token %}
+    <h1><b>Welcome to History page </b></h1>
+    <br>
+    <h1>Order History:</h1>
+    <table style="width:100%">
+    <tr>
+        <th>Provider Name</th>
+        <th>Consumer Name</th>
+        <th>Order quantity</th>
+        <th>Customer contact</th>
+        <th>Time of Order</th>
+        <th>Date of Order</th>
+    </tr>
+    {% for his in list %}
+            <tr>
+                <th>{{ his.provider.institute_name }}</th>
+                <th>{{ his.consumer.institute_name }}</th>
+                <th>{{ his.order }}</th>
+                <th>{{ his.consumer_contact_number }}</th>
+                <th>{{ his.time }}</th>
+                <th>{{ his.date }}</th>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="http://127.0.0.1:8000/logout">Logout</a>
+</body>
+</html>

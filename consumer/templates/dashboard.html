@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% csrf_token %}
+    <h1><b>Welcome to our page </b></h1>
+    <h3>{{ msg }}</h3>
+    <h2>Opening soon.....</h2>
+    <br>
+    <h1>All available Food Providers are:</h1>
+    {% for prov in list %}
+        <h3> {{ forloop.counter }}</h3>
+        <ul>
+            <l1>{{ prov.provider.institute_name }}</l1>
+            <l1>{{ prov.food_available_count }}</l1>
+            <l1>{{ prov.food_best_till }}</l1>
+            <l1><a href="http://127.0.0.1:8000/transaction/{{ prov.id }}">Go here >></a></l1>
+        </ul>
+    {% endfor %}
+    <br>
+    <a href="http://127.0.0.1:8000/history">Order History</a>
+    <br>
+    <a href="http://127.0.0.1:8000/logout">Logout</a>
+</body>
+</html>
